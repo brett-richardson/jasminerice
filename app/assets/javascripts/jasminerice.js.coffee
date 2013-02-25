@@ -29,4 +29,9 @@
     currentWindowOnload()  if currentWindowOnload
     if jasmine.rice.autoExecute
       execJasmine()
+      try
+        $.faviconNotify '/favicon.ico', htmlReporter.failedTests
+      catch e
+        console.log 'jQuery faviconNotify library not present.'
+    setInterval 180000, -> location.reload() # if jasmine.rice.timeout?
 )()
