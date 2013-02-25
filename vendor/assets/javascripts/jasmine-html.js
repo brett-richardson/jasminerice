@@ -296,6 +296,10 @@ jasmine.HtmlReporter.ReporterView = function(dom) {
       return;
     }
     suiteView.refresh();
+
+    try{
+      $.faviconNotify( '/favicon.ico', this.failedCount );
+    }
   };
 
   this.refresh = function() {
