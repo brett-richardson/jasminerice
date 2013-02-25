@@ -299,6 +299,8 @@ jasmine.HtmlReporter.ReporterView = function(dom) {
 
     try{
       $.faviconNotify( '/favicon.ico', this.failedCount );
+    } catch( error ){
+      console.log( 'jQuery faviconNotify library not present.', error );
     }
   };
 
